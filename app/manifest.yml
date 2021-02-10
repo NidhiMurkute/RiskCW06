@@ -1,0 +1,15 @@
+applications:
+  - name: cpapp-app
+    path: ./
+    memory: 128M
+    buildpacks:
+      - nodejs_buildpack
+    env:
+      destinations: >
+        [
+          {"name":"backend","url":"https://cpapp-srv-riskdomain-dev.cfapps.sap.hana.ondemand.com","forwardAuthToken":true}
+        ]
+    routes:
+      - route: cpapp-app-riskdomain-dev.cfapps.sap.hana.ondemand.com
+    services:
+      - xsuaa_for_cpapp

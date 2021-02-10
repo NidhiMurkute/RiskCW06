@@ -1,0 +1,43 @@
+{
+  "name": "cpapp",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^4",
+    "@sap/xsenv": "^3.1.0",
+    "@sap/xssec": "^3.1.0",
+    "express": "^4",
+    "passport": "^0.4.1"
+  },
+  "devDependencies": {
+    "@sap/ux-specification": "^1.84.2",
+    "sqlite3": "^5"
+  },
+  "scripts": {
+    "start": "cds run"
+  },
+  "sapux": [
+    "app\\risks"
+  ],
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sql"
+      },
+      "uaa": {
+        "kind": "xsuaa",
+        "credentials": {}
+      },
+      "API_BUSINESS_PARTNER": {
+        "kind": "odata",
+        "model": "srv/external/API_BUSINESS_PARTNER",
+        "credentials": {
+          "destination": "cap-api098"
+        }
+      }
+    }
+  }
+}
