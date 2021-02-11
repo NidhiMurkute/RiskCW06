@@ -15,7 +15,7 @@ build-parameters:
      commands:
       - npm install --production
       - npx -p @sap/cds-dk cds build --production
-      #- bash -c 'find gen -type f \( -name '*.csv' -or -name '*.hdbtabledata' \) | xargs rm -f'
+      - bash -c 'find gen -type f \( -name '*.csv' -or -name '*.hdbtabledata' \) | xargs rm -f'
 
 modules:
  - name: cpapp-app
